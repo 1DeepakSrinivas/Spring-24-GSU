@@ -1,8 +1,8 @@
 def intro():
     user_name = input("Please enter your name: ")
     class_days=str(input("Please enter the days of the week you have class: "))
-    lab_days=str(input("Please enter the days of the week you have lab: "))
     class_time=str(input("Please enter the time of day you have class: "))
+    lab_days=str(input("Please enter the days of the week you have lab: "))
     lab_time=str(input("Please enter the time of day you have lab: "))
 
     print(f'Hello {user_name}!')
