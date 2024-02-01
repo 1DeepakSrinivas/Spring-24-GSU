@@ -1,4 +1,5 @@
 import math as m
+
 def triangles():
     is_right_angled=False
     is_acute_angled=False
@@ -10,13 +11,13 @@ def triangles():
     perimeter_triangle=side_a+side_b+side_c 
     semi_perimeter=perimeter_triangle/2
 
-    area_triangle=m.sqrt(semi_perimeter*(semi_perimeter-side_a)*(semi_perimeter-side_b)*(semi_perimeter-side_c)) #Heron's formula
+    area_triangle=m.sqrt(semi_perimeter*(semi_perimeter-side_a)*(semi_perimeter-side_b)*(semi_perimeter-side_c)) #Heron's formula for area of triangle
 
-    if side_a**2+side_b**2==side_c**2 or side_a**2+side_c**2==side_b**2 or side_b**2+side_c**2==side_a**2: #Pythagorean theorem
+    if side_a**2+side_b**2==side_c**2 or side_a**2+side_c**2==side_b**2 or side_b**2+side_c**2==side_a**2: #Pythagorean theorem to check if right-angled
         is_right_angled=True
-    elif side_a**2+side_b**2>side_c**2 and side_a**2+side_c**2>side_b**2 and side_b**2+side_c**2>side_a**2: #Cosine rule
+    elif side_a**2+side_b**2>side_c**2 and side_a**2+side_c**2>side_b**2 and side_b**2+side_c**2>side_a**2: #Cosine rule to check if acute-angled
         is_acute_angled=True
-    elif side_a**2+side_b**2<side_c**2 or side_a**2+side_c**2<side_b**2 or side_b**2+side_c**2<side_a**2: 
+    elif side_a**2+side_b**2<side_c**2 or side_a**2+side_c**2<side_b**2 or side_b**2+side_c**2<side_a**2: # to check if obtuse-angled
         is_obtuse_angled=True
     else:
         print("The triangle is invalid.")
