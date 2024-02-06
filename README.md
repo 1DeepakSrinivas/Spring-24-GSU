@@ -10,10 +10,10 @@ This repository contains all the projects, homework, and assignments that were i
 ## Course Information
 
 ### Course Code
-CSC 1301
+CSC/DSCI 1301
 
 ### Course Title
-Introduction to Computer Science
+Principles of Computer Science I
 
 ### Language Focus
 This course primarily covers the Python programming language.
