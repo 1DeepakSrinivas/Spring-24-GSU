@@ -12,7 +12,8 @@ def triangles():
     perimeter_triangle=side_a+side_b+side_c 
     semi_perimeter=perimeter_triangle/2
 
-    area_triangle=m.sqrt(semi_perimeter*(semi_perimeter-side_a)*(semi_perimeter-side_b)*(semi_perimeter-side_c)) #Heron's formula for area of triangle
+    area_triangle=m.sqrt(semi_perimeter*(semi_perimeter-side_a)*(semi_perimeter-side_b)*
+                         (semi_perimeter-side_c)) #Heron's formula for area of triangle
 
     if (side_a**2+side_b**2==side_c**2 or 
         side_a**2+side_c**2==side_b**2 or 
