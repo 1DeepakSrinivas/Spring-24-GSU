@@ -1,7 +1,7 @@
 ''' To create a program that will determine the season
     based on the input day and month of the year in the southern hemisphere.'''
 
-def calendear_south_hem():
+def calendar_south_hem():
     user_month=input("Please enter the month:")
     user_day=int(input("Please enter the day:"))
 
@@ -49,4 +49,4 @@ def calendear_south_hem():
             else:
                 print(f'{user_month.title()} {user_day} is Spring in the southern hemisphere.')
 
-calendear_south_hem()
+calendar_south_hem()
