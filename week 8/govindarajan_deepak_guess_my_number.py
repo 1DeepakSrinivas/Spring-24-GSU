@@ -6,6 +6,7 @@ def guess_my_number():
         guess=int(input(f"Guess {i+1}: "))
         if guess==number:
             print("You correctly guessed my random number!")
+            break
         elif guess<number:
             print("Your guess is lower than my random number. Try again.")
         elif guess>number:
