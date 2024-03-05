@@ -86,13 +86,9 @@ amino_acids = {
     'GGG': 'Gly',
 }
 
-def chunk(string, chunk_size):
-    chunk_list = []
+import govindarajan_deepak_helper.py as helper
 
-    for i in range(0, len(string), chunk_size):
-        chunk_list.append(string[i:i + chunk_size])
-
-    return chunk_list
+helper.chunk(string, chunk_size)
 
 def transcription(dna_sequence):
     mrna = ""
