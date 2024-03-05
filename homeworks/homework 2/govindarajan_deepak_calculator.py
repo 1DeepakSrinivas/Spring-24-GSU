@@ -11,7 +11,8 @@ def calculator():
         mod_split=expression.split(sep='%')
         exp_split=expression.split(sep='**')
         floor_split=expression.split(sep='//')
-
+        
+        print(floor_split)
         if '+' in expression:
             addition(add_split[0],add_split[1])
         elif '-' in expression:
@@ -28,7 +29,7 @@ def calculator():
             floor_division(floor_split[0],floor_split[1])
         elif expression.lower() == 'exit' or 'quit' or 'q':
             break
-        else:
+        elif len(expression)<3:
             print("Invalid expression")
     
 def addition(a,b):
