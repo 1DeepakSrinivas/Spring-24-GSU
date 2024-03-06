@@ -14,19 +14,19 @@ def calculator():
 
         if '+' in expression:
             addition(add_split[0],add_split[1])
-        elif '-' in expression:
+        if '-' in expression:
             subtraction(sub_split[0],sub_split[1])
-        elif '*' in expression:
+        if '*' in expression:
             multiplication(mul_split[0],mul_split[1])
-        elif '/' in expression:
+        if '/' in expression:
             division(div_split[0],div_split[1])
-        elif '%' in expression:
+        if '%' in expression:
             modulus(mod_split[0],mod_split[1])
-        elif '**' in expression:
+        if '**' in expression:
             exponent(exp_split[0],exp_split[1])
-        elif '//' in expression:
+        if '//' in expression:
             floor_division(floor_split[0],floor_split[1])
-        elif expression.lower() == 'exit' or 'quit' or 'q':
+        if expression.lower() == 'exit' or 'quit' or 'q':
             break
         elif len(expression)<3:
             print("Invalid expression")
