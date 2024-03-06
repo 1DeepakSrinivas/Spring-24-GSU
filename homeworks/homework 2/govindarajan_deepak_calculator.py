@@ -11,8 +11,9 @@ def calculator():
         mod_split=expression.split(sep='%')
         exp_split=expression.split(sep='**')
         floor_split=expression.split(sep='//')
-        
-        print(floor_split)
+
+        print(expression.split())
+
         if '+' in expression:
             addition(add_split[0],add_split[1])
         elif '-' in expression:
