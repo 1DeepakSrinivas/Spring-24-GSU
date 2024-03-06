@@ -12,8 +12,6 @@ def calculator():
         exp_split=expression.split(sep='**')
         floor_split=expression.split(sep='//')
 
-        print(expression.split())
-
         if '+' in expression:
             addition(add_split[0],add_split[1])
         elif '-' in expression:
