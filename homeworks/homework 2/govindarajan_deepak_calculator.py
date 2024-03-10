@@ -15,8 +15,6 @@ def calculator():
             addition(add_split[0],add_split[1])
         elif '-' in expression:
             subtraction(sub_split[0],sub_split[1])
-        elif '**' in expression:
-            exponent(exp_split[0],exp_split[1])
         elif '*' in expression:
             multiplication(mul_split[0],mul_split[1])
         elif '//' in expression:
