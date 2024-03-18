@@ -30,11 +30,10 @@ def RGB_to_CMYK():
         print(f"Magenta: {color_cmyk['Magenta']}")
         print(f"Yellow: {color_cmyk['Yellow']}")
         print(f"Key (Black) : {color_cmyk['Key (Black)']}")
-
-    else:
-        if r_val in ['q','quit','stop','Q']:
+        cont=input("Continue? ")
+        if cont in ['q','quit','Q']:
             break
-    
+
 RGB_to_CMYK()
 
 
