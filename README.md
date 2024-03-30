@@ -1,11 +1,11 @@
 # CSC 1301 Spring '24
 
 ## Author
-Deepak Srinivas Govindarajan
+Deepak Srinivas G
 
 ## Overview
 
-This repository contains all the projects, homework, and assignments that were included as a part of the coursework at GSU CAS Computer Science for the Spring semester of 2024.
+This repository contains all the projects, homework, and assignments in the coursework for the Spring '24 semester at Georgia State
 
 ## Course Information
 
