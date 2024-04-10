@@ -25,15 +25,18 @@ class Course():
         return len(self.roster)
 
     def find_student_highest_gpa(self):
-        if not self.roster:
-            raise EmptyRosterError
-        max_gpa = 0
-        highest_gpa_student = None
-        for student in self.roster:
-            if student.get_gpa() > max_gpa:
-                max_gpa = student.get_gpa()
-                highest_gpa_student = student
-        return highest_gpa_student
+        try:
+            max_gpa = 0
+            highest_gpa_student = None
+            for student in self.roster:
+                if student.get_gpa() > max_gpa:
+                    max_gpa = student.get_gpa()
+                    highest_gpa_student = student
+            if highest_gpa_student is None:
+                raise EmptyRosterError
+            return highest_gpa_student
+        except EmptyRosterError:
+            print("The roster is empty.")
 
 class EmptyRosterError(Exception):
     def error(self):
@@ -43,16 +46,16 @@ def main():
     course = Course([])
     print("Welcome to CSC/DSCI 1301: Principles in CS/DS I")
     while True:
-        print("Please Add Students to the Course: (quit or q to exit)\n\n")
+        print("Please Add Students to the Course: (quit or q to exit)\n")
         first_name = input("Enter First Name: ")
         if first_name.lower() in ['quit', 'q']:
             if course.course_size() > 0:
                 try:
                     highest_gpa_student = course.find_student_highest_gpa()
-                    print(f"Student with highest GPA: {highest_gpa_student.get_first()} {highest_gpa_student.get_last()}, GPA: {highest_gpa_student.get_gpa()}")
+                    print(f"\nTop Student: {highest_gpa_student.get_first()} {highest_gpa_student.get_last()} (GPA: {highest_gpa_student.get_gpa()})")
                 except EmptyRosterError as e:
                     print(e)
-            print(f"Number of students enrolled: {course.course_size()}")
+            print(f"Course Size: {course.course_size()} students.")
             break
         last_name = input("Enter Last Name: ")
         gpa = input("Enter GPA: ")
