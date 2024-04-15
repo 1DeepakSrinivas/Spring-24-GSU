@@ -89,7 +89,7 @@ class Train:
                 composition.append('F')
         
         for i in range(len(composition)):
-            print(composition[i],end='...')
+            print(f".{composition[i]}",end='.')
 
 
 train1=Train()
