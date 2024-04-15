@@ -1,79 +1,73 @@
 class Locomotive:
-    def __init__(self,length,max_payload,max_speed):
+    def __init__(self,max_payload,max_speed,length=23):
         self.length = length
         self.max_payload = max_payload
         self.max_speed=max_speed
 
         def get_length(self):
-            print(f'Length: {self.length} metres.')
+            return self.length
 
         def get_maximum_payload(self):
-            print(f'Maximum payload: {self.max_payload} tons.')
+            return self.max_payload
 
         def get_maximum_speed(self):
-            print(f'Maximum speed: {self.max_speed} mph.')
+            return self.max_speed
 
         
 class Railcar:
-    def __init__(self,length,cargo_type,min_weight,max_weight,capacity):
-        self.length = length
+    def __init__(self,cargo_type,min_weight,max_weight,capacity,length=20):
         self.cargo_type = cargo_type
         self.min_weight = min_weight
         self.max_weight = max_weight
         self.capacity = capacity
+        self.length = length
 
-    def get_length(self):
-        print(f'Length: {self.length} metres.')
+        def get_cargo_type(self):
+            return self.cargo_type
 
-    def get_cargo_type(self):
-        print(f'Cargo type: {self.cargo_type}.')
-
-    def get_weight_range(self):
-        print(f'Weight range: {self.min_weight} - {self.max_weight} tons.')
+        def get_length(self):
+            return self.length
+        
+        def get_weight(self):
+            return self.min_weight + ((self.max_weight - self.min_weight) * self.capacity)
 
 class Train:
-    train1=([])
     def __init__(self,max_payload,max_speed,length,payload,speed,Locomotive,Railcar):
-        self.max_payload = max_payload
-        self.max_speed = max_speed
-        self.length = length
+        self.max_payload = Locomotive.get_maximum_payload()
+        self.max_speed = 0
+        self.length = 0
         self.payload = payload
         self.speed = speed
-        self.Locomotive = Locomotive
-        self.Railcar = Railcar
-
-    def get_length(self):
-        
-
-    def get_payload(self):
-
-    
-    def get_speed(self):
-
+        self.Locomotive = []
+        self.Railcar = []
     
     def add_locomotive(locomotive):
-        self.Locomotive = locomotive
+        train1.append(locomotive)
         self.length += locomotive.length
-        train1.append('L')
+        self.speed = locomotive.max_speed
+        self.max_speed = locomotive.max_speed
+        self.max_payload = locomotive.max_payload
+
 
     def add_railcar(railcar):
         while self.payload + railcar.capacity <= self.max_payload:
             self.payload += railcar.capacity
             self.length += railcar.length
             self.Railcar.append(railcar)
+        else:
+            print('Payload Capcity Exceeded.')
     
     def remove_railcar(railcar):
         if railcar in self.Railcar:
             self.payload -= railcar.capacity
             self.length -= railcar.length
             self.Railcar.remove(railcar)
+        else:
+            print('Railcar not found.')
+
+        
     
     
 
-    
 
-def print_train():
-    print(f'Train length: {self.length} metres.')
-    rint(f'Train speed: {self.speed} mph.')
-    print(f'Train payload: {self.payload} tons.')
-    p
+    
