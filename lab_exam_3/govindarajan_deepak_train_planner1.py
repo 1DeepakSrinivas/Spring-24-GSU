@@ -4,14 +4,14 @@ class Locomotive:
         self.max_payload = max_payload
         self.max_speed=max_speed
 
-    def get_length(self):
-        return self.length
+        def get_length(self):
+            return self.length
 
-    def get_maximum_payload(self):
-        return self.max_payload
+        def get_maximum_payload(self):
+            return self.max_payload
 
-    def get_maximum_speed(self):
-        return self.max_speed
+        def get_maximum_speed(self):
+            return self.max_speed
 
 
 class Railcar:
@@ -30,7 +30,6 @@ class Railcar:
 
     def get_weight(self):
         return self.min_weight + self.capacity * (self.max_weight - self.min_weight)
-
 
 class Train:
     def __init__(self):
@@ -52,13 +51,13 @@ class Train:
         return payload
 
     def get_speed(self):
-        slowest_loco_speed = min(loco.get_maximum_speed() for loco in self.locomotives)
+        slowest_loco_speed = min(Locomotive.get_maximum_speed() for loco in self.locomotives)
         total_payload = self.get_payload()
         return slowest_loco_speed * (1 - 0.5 * total_payload / slowest_loco_speed)
 
     def add_railcar(self, railcar):
         total_payload = self.get_payload()
-        total_loco_payload = sum(loco.get_maximum_payload() for loco in self.locomotives)
+        total_loco_payload = sum(Locomotive.get_maximum_payload() for loco in self.locomotives)
         if total_payload + railcar.get_weight() <= total_loco_payload:
             self.railcars.append(railcar)
 
@@ -75,12 +74,13 @@ class Train:
         else:
             print('Cannot remove locomotive.')
 
-    def print_train(self):
+    
+    def print_train():
         print(f'Payload: {self.get_payload()} tons')
         print(f'Speed: {self.get_speed()} mph')
         print(f'Length: {self.get_length()} meters')
         composition=[]
-        for loco in self.locomotives:
+        for loco in self.locomotive:
             composition.append('L')
         for car in self.railcars:
             if car.get_cargo_type() == 'Passenger':
@@ -90,7 +90,6 @@ class Train:
         
         for i in range(len(composition)):
             print(composition[i],end='...')
-
 
 train1=Train()
 
@@ -107,4 +106,3 @@ train1.add_railcar(railcar1)
 train1.add_railcar(railcar2)
 
 train1.print_train()
-
